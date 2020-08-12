@@ -2,9 +2,6 @@
 
 set -x
 
-# remove old session lock
-rm -f /config/session/rtorrent.lock
-
 # fetch ip for interface wg9, used to bind rtorrent to VPN
 IP=$(ip addr show wg0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
 

@@ -49,5 +49,8 @@ for lan_network_item in "${lan_network_list[@]}"; do
     ip route add "${lan_network_item}" via "${DEFAULT_GATEWAY}" dev "${docker_interface}"
 done
 
+# remove old session lock
+rm -f /config/session/rtorrent.lock
+
 # start supervisor
 supervisord -c /etc/supervisor.d/supervisord.ini
