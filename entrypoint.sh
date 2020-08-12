@@ -49,12 +49,5 @@ for lan_network_item in "${lan_network_list[@]}"; do
     ip route add "${lan_network_item}" via "${DEFAULT_GATEWAY}" dev "${docker_interface}"
 done
 
-# remove old rtorrent session lock
-rm -f /config/session/rtorrent.lock
-
-# fetch ip for interface wg9, used to bind rtorrent to VPN
-IP=$(ip addr show wg0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
-export IP=$IP
-
 # start supervisor
 supervisord -c /etc/supervisor.d/supervisord.ini
