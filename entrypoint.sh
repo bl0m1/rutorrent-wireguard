@@ -50,4 +50,4 @@ for lan_network_item in "${lan_network_list[@]}"; do
 done
 
 # start supervisor
-supervisord
+supervisord -c /etc/supervisor.d/supervisord.ini
