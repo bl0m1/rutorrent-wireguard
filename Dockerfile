@@ -1,7 +1,7 @@
 FROM alpine:3.12
 
 # mediainfo and php-geoip left out
-RUN apk add --no-cache rtorrent unzip unrar curl php7-fpm php7 php7-json nginx wget ffmpeg supervisor bash wireguard-tools iptables
+RUN apk add --no-cache rtorrent unzip screen unrar curl php7-fpm php7 php7-json nginx wget ffmpeg supervisor bash wireguard-tools iptables
 
 # rutorrent
 RUN mkdir -p /var/www && \
