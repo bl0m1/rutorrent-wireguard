@@ -22,3 +22,4 @@ done
 rtorrent_pid=$(< /config/session/rtorrent.lock | cut -d '+' -f 2)
 
 wait $rtorrent_pid
+exit 1
